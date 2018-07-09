@@ -1,7 +1,8 @@
 // @flow
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Rx from "rxjs/Rx";
+//import Subject from "rxjs/Subject"
 
 import * as BooksAPI from "./BooksAPI";
 import "./App.css";
@@ -9,18 +10,19 @@ import "./App.css";
 class SearchBooks extends React.Component {
   state = {
     query: "",
-    books: []
-  };
+    books: [],
+    //searchInput:""
+};
 
+searchInput: Rx.Subject<any>;
 
-
-  constructor() {
-    super()
-
-  /*  this.searchInput.subscribe(param => { //.debounceTime(500)
-      this.fireSearchBook(param);
-    });*/
-  }
+    constructor() {
+      super();
+      this.searchInput = new Rx.Subject();
+      this.searchInput.debounceTime(400).subscribe(param => {
+        this.fireSearchBook(param);
+      });
+    }
 
   updateQuery = (query: string) => {
     this.setState({
