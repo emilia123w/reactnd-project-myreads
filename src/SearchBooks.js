@@ -41,19 +41,19 @@ static propTypes = {
       return (
         <div className="search-books">
           <div className="search-books-bar">
-            <Link className="close-search"  to="/">Close</Link> //goes back to the page
+            <Link className="close-search"  to="/">Close</Link>
             <div className="search-books-input-wrapper">
               <input type="text"
                 placeholder="Search by title or author"
                 value= { query }
-                onChange={ this.getBooks } /> //shows books when input provided
+                onChange={ this.getBooks } />
             </div>
           </div>
           <div className="search-books-results">
             {newBooks.length > 0 && (
               <div>
                 <div className=''>
-                  <h3>Search returned { newBooks.length } books </h3> //number of books
+                  <h3>Search returned { newBooks.length } books </h3>
                 </div>
                 <ol className="books-grid">
                   {newBooks.map((book) => (
@@ -70,7 +70,7 @@ static propTypes = {
             { searchError  && (
               <div>
                 <div className=''>
-                  <h3>Search returned no books</h3> //when no books found
+                  <h3>Search returned no books</h3>
                   </div>
                 </div>
             )}
