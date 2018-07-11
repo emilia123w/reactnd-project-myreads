@@ -1,8 +1,9 @@
 // @flow
 import React from "react";
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import * as BooksAPI from "./BooksAPI";
+import Book from './Book';
 import "./App.css";
 
 class SearchBooks extends React.Component {
@@ -57,7 +58,7 @@ static propTypes = {
                 </div>
                 <ol className="books-grid">
                   {newBooks.map((book) => (
-                    <book
+                    <Book
                       book={ book }
                       books={ books }
                       key={ book.id }
