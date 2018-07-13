@@ -11,7 +11,7 @@ class SearchBooks extends React.Component {
 
 static propTypes = {
     books: PropTypes.array.isRequired,
-    changeShelf: PropTypes.func.isRequired
+    onChangeShelf: PropTypes.func.isRequired
   }
 
   state = {
@@ -37,7 +37,7 @@ static propTypes = {
   render() {
 
     const { query, newBooks, searchError } = this.state
-    const { books, changeShelf } = this.props
+    const { books, onChangeShelf } = this.props
 
       return (
         <div className="search-books">
@@ -62,7 +62,7 @@ static propTypes = {
                       book={ book }
                       books={ books }
                       key={ book.id }
-                      changeShelf={ changeShelf }
+
                     />
                   ))}
                 </ol>
