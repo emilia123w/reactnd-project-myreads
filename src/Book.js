@@ -1,6 +1,9 @@
+// @flow
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import BookShelf from './BookShelf';
+import { Link } from "react-router-dom";
 
 class Book extends Component {
 
