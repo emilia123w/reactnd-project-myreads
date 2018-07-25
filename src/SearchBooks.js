@@ -33,6 +33,13 @@ static propTypes = {
 
   } else this.setState({newBooks: [], searchError: false })
   }
+  
+  updateQuery = (event) => {
+    const value = event.target.value
+    this.setState({query: value})
+    this.searchData(value.trim())
+  }
+
 
   render() {
 
