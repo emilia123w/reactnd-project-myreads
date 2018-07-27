@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import BookShelf from './BookShelf';
 import { Link } from "react-router-dom";
+import SearchBooks from './SearchBooks.js';
 
 class Book extends Component {
 
@@ -15,7 +16,7 @@ class Book extends Component {
 
   render() {
 
-    const { book, books } = this.props
+    const { book, books, onChangeShelf } = this.props
     const title = book.title ? book.title : "No title available"
 
     return (
